@@ -1,0 +1,17 @@
+{
+  "name": "react-compiler-demo",
+  "private": true,
+  "workspaces": [
+    "with-compiler",
+    "without-compiler"
+  ],
+  "scripts": {
+    "dev:with": "turbo run dev --filter=with-compiler",
+    "dev:without": "turbo run dev --filter=without-compiler",
+    "dev:both": "concurrently \"npm run dev:with\" \"npm run dev:without\""
+  },
+  "devDependencies": {
+    "turbo": "^1.12.0",
+    "concurrently": "^8.0.0"
+  }
+}
