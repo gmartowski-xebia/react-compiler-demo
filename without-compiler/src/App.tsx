@@ -1,4 +1,4 @@
-import { useState, useCallback, useMemo } from "react";
+import { useState, useCallback, useMemo, use } from "react";
 import Child from "./Child";
 
 export default function App() {
@@ -14,12 +14,14 @@ export default function App() {
     for (let i = 0; i < 1_000_000; i++) {
       total += i;
     }
+    console.log("Expensive calculation done");
     return total;
   }, []);
 
   return (
     <div>
-      <h1>Count: {count}</h1>
+      <h1>Without-compiler App</h1>
+      <h2>Count: {count}</h2>
       <p>Expensive: {expensive}</p>
       <input value={input} onChange={(e) => setInput(e.target.value)} />
       <button onClick={() => setCount(c => c + 1)}>Increment</button>

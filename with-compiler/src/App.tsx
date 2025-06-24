@@ -20,7 +20,8 @@ export default function Page() {
 
   return (
     <div>
-      <h1>Count: {count}</h1>
+      <h1>With-compiler App</h1>
+      <h2>Count: {count}</h2>
       <p>Expensive: {expensive}</p>
       <input value={input} onChange={(e) => setInput(e.target.value)} />
       <button onClick={() => setCount(c => c + 1)}>Increment</button>
